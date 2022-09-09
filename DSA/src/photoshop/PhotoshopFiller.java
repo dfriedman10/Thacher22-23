@@ -1,3 +1,4 @@
+package photoshop;
 // Photoshop program that can run several manipulations on 
 // an image
 // Make sure there is an Images folder inside your Java project

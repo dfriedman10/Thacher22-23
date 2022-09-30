@@ -10,8 +10,9 @@ public class GraphicsAnimation {
 	
 	public void draw(Graphics g) {
 		
-		g.setColor(Color.red);
-		g.fillRect(100, 100, 50, 50);
+		g.setColor( new Color(255, 0, 0)   );
+		
+		g.fillPolygon(new int[] {100, 300, 300}, new int[] {100, 200, 300}, 3);
 		
 		
 	}
@@ -24,6 +25,8 @@ public class GraphicsAnimation {
 		window.setSize(600, 600);
 		
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		window.setBackground(Color.blue);
 		
 		
 		JPanel canvas = new JPanel() {

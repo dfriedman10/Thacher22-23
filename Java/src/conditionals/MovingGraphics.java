@@ -8,20 +8,43 @@ import javax.swing.JPanel;
 
 public class MovingGraphics {
 	
-	int x = 0, y = 300;
+	int x1 = 0, y1 = 300, speedx1 = 7, speedy1 = 5;
+	int x2 = 300, y2 = 0, speedx2 = 8, speedy2 = 3;
 	
 	public void draw(Graphics g) {
+		
+		g.setColor( new Color(0, 0, 255)   );
+		g.fillRect(0, 0, 600, 600);
+
 		
 		g.setColor( new Color(255, 0, 0)   );
 		
 //		g.fillPolygon(new int[] {100, 300, 300}, new int[] {100, 200, 300}, 3);
 		
-		g.fillRect(x, y, 50, 50);
+		g.fillRect(x1, y1, 50, 50);
+		
+		g.fillRect(x2, y2, 50, 50);
 	}
 	
 	public void move() {
 		
-		x += 8;
+		x1 += speedx1;
+		
+		if (x1 >= 600) {
+			
+			x1 = 0;
+		}
+		
+		x2 += speedx2;
+		y2 += speedy2;
+		
+		if (y2 >= 550 || y2 <= 0) {
+			speedy2 = -speedy2;
+		}
+		if (x2 >= 550 || x2 <= 0) {
+			speedx2 = -speedx2;
+		}
+		
 	}
 	
 
@@ -31,10 +54,7 @@ public class MovingGraphics {
 		
 		window.setSize(600, 600);
 		
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		window.setBackground(Color.blue);
-		
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
 		
 		JPanel canvas = new JPanel() {
 			

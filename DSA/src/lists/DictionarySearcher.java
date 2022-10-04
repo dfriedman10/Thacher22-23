@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class DictionarySearcher {
 	
-	private static boolean binary = false;	// controls which type of search to use
+	private static boolean binary = true;	// controls which type of search to use
 	
 	// sequential search
 	public static int seqSearch(String s, List<String> words) {
@@ -25,7 +25,37 @@ public class DictionarySearcher {
 	// binary search
 	public static int binSearch(String s, List<String> words, int start, int end) {
 		
-		// your code here
+		while (start <= end) {
+			
+			int mid = (start + end)/2;
+			
+			if (words.get(mid).equals(s)) 
+				return mid;
+			
+			else if (words.get(mid).compareTo(s) < 0)
+				start = mid;
+			
+			else
+				end = mid;
+		}
+		return -1;
+		
+//		if (start > end)
+//			return -1;
+//		
+//		int mid = (start + end)/2;
+//		
+//		if (words.get(mid).equals(s)) 
+//			return mid;
+//			
+//		else if (words.get(mid).compareTo(s) < 0)
+//			return binSearch(s, words, mid, end);
+//		
+//		else
+//			return binSearch(s, words, start, mid);
+	
+		
+		
 	}
 
 	// generates the list of words from words.txt, then runs the search

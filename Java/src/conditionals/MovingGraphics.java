@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 public class MovingGraphics {
 	
-	int x = 0, y = 300;
+	int x = 0, y = 300, xVel = 5, yVel = 7;
 	
 	public void draw(Graphics g) {
 		
@@ -22,7 +22,17 @@ public class MovingGraphics {
 	}
 	
 	public void move() {
-		x += 5;
+		x += xVel;
+		
+		if (x >= 550 || x <= 0) {
+			xVel = -xVel;
+		}
+		
+		y += yVel;
+		
+		if (y >= 550 || y <= 0) {
+			yVel = -yVel;
+		}
 		
 	}
 	

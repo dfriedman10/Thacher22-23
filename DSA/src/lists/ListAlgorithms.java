@@ -3,27 +3,6 @@ package lists;
 import java.util.ArrayList;
 
 public class ListAlgorithms {
-
-	
-	
-//	Take a list of integers as parameter. Return the average of the numbers in this list.
-//	 
-//
-//	Take a list of integers as parameter. Return the minimum number in this list.
-//	 
-//
-//	Take an integer n as parameter. Return a list containing the first n numbers in the Fibonacci sequence (0, 1, 1, 2, 3, 5, 8, 13...)
-//
-//	Create a method that takes two integers as parameter (n and x), and return a list of n random numbers between -x and x, inclusive.
-//	 
-//
-//	Create a method that takes a list of integers as parameter. The method should then separate these numbers into two ArrayLists: one for positive integers, the other for negative integers. Print both of these lists (we can't return them both).
-//	For example, if the random ArrayList was [-9, 3, 42, -17, -19], we would get [3, 42] and [-9, -17, -19].
-//
-//	 
-//
-//	Create a method that takes a list of doubles as parameter. Reverse this list without creating any new lists. Do you need to return anything?
-			
 	
 	public static double avg(ArrayList<Integer> nums) {
 		

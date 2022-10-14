@@ -8,21 +8,29 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class ControlledMovement {
+public class ControlledGraphics {
 	
 	int x = 300, y = 300, xVel = 0, yVel = 0;
+	
+	int screenWidth = 900, screenHeight = 600; 
+	
+	int boxSize = 50;
 	
 	public void draw(Graphics g) {
 		
 		g.setColor(Color.black);
-		g.fillRect(x, y, 50, 50);
+		g.fillRect(0, 0, screenWidth, screenHeight);
+		
+		g.setColor( new Color(255, 0, 0)   );
+		
+		g.fillRect(x, y, boxSize, boxSize);
 		
 	}
 	
 	public void move() {
 
 		x += xVel;
-		y += yVel;
+		y += yVel; 
 		
 	}
 	
@@ -31,7 +39,7 @@ public class ControlledMovement {
 		
 		JFrame window = new JFrame("Graphics 1.0");
 		
-		window.setSize(600, 600);
+		window.setSize(screenWidth, screenHeight);
 		
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -54,21 +62,35 @@ public class ControlledMovement {
 
 			@Override
 			public void keyPressed(KeyEvent e) {
-				// TODO Auto-generated method stub
 				
-				if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-					xVel = 5;
+				if (e.getKeyChar() == 'w') { 
+					yVel = -5;
 				}
-				else if (e.getKeyChar() == 's'){
+				if (e.getKeyChar() == 's') { 
+					yVel = 5;
+				}
+				if (e.getKeyCode() == KeyEvent.VK_LEFT) { 
 					xVel = -5;
 				}
+				if (e.getKeyCode() == KeyEvent.VK_RIGHT) { 
+					xVel = 5;
+				}	
 			}
 
 			@Override
 			public void keyReleased(KeyEvent e) {
-				// TODO Auto-generated method stub
-				
-				xVel = 0;
+				if (e.getKeyChar() == 'w') { 
+					yVel = 0;
+				}
+				if (e.getKeyChar() == 's') { 
+					yVel = 0;
+				}
+				if (e.getKeyCode() == KeyEvent.VK_LEFT) { 
+					xVel = 0;
+				}
+				if (e.getKeyCode() == KeyEvent.VK_RIGHT) { 
+					xVel = 0;
+				}
 				
 			}
 			
@@ -98,7 +120,7 @@ public class ControlledMovement {
 
 	public static void main(String[] args) {
 
-		ControlledMovement test = new ControlledMovement();
+		ControlledGraphics test = new ControlledGraphics();
 		test.startGraphics();
 		
 	}

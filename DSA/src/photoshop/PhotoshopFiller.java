@@ -34,18 +34,7 @@ public class PhotoshopFiller extends Component {
     public void brighten(int amount) {
         outputName = "brightened" + outputName;
         
-        for (int i = 0; i < pixels.length; i++) {
-        	for (int j = 0; j < pixels[i].length; j++) {
-        		
-        		int r = pixels[i][j].getRed();
-        		int g = pixels[i][j].getGreen();
-        		int b = pixels[i][j].getBlue();
-        		
-        		
-        		pixels[i][j] = new Color(r, g, b);
-        		
-        	}
-        }
+        // your code here
         
     }
     
@@ -54,40 +43,7 @@ public class PhotoshopFiller extends Component {
         outputName = (horizontally?"h":"v") + "_flipped_" + outputName;
         
         // your code here
-        
-        if (horizontally) {
-        	
-        	for (int i = 0; i < pixels.length; i++) {
-        		
-        		for (int j = 0; j < pixels[i].length/2; j++) {
-        			
-        			
-        			Color temp = pixels[i][j];
-        			
-        			pixels[i][j] = pixels[i][pixels[i].length -j -1];
-        			pixels[i][pixels[i].length -j -1] = temp;
-        			
-        			
-        			
-        			
-        		}
-        		
-        		
-        		
-        		
-        		
-        		
-        	}
-        	
-        	
-        	
-        	
-        	
-        	
-        	
-        	
-        	
-        }
+
     }
     
     // negates an image

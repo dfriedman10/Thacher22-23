@@ -7,6 +7,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -71,6 +75,30 @@ public class TextandButtons {
 	
 	public static void main(String[] args) {
 		new TextandButtons().startGraphics();
+		
+		
+		try {
+			BufferedReader in = new 
+					BufferedReader(new FileReader("text.txt"));
+			
+			String text = "";
+			
+			for (String line = in.readLine(); in != null;
+					line = in.readLine()) {
+				
+				text += line + "\n";
+			}
+			
+			
+			
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	

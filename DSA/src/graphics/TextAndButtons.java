@@ -83,7 +83,7 @@ public class TextAndButtons {
 			
 			String text = "";
 			
-			for (String line = in.readLine(); in != null;
+			for (String line = in.readLine(); line != null;
 					line = in.readLine()) {
 				
 				text += line + "\n";

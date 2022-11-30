@@ -2,52 +2,43 @@ package arrays;
 
 public class ArrayExamples {
 	
-	public void countPositives(int[] nums) {
-		
-		int positives = 0;
-		
-		for (int i = 0; i < nums.length; i++) {
-			
-			if ( nums[i] > 0  ) {
-				
-				positives++;
-			}
-		}
-		printArray(nums);
-		System.out.println(positives);
-	}
-	
-
 	public void printArray(int[] arr) {
 		
-		System.out.print("[" + arr[0]);
-		
-		for (int i = 1; i < arr.length; i++) {
+		for (int i = 0; i < arr.length; i++) {
 			
-			System.out.print(", " + arr[i]);
-			
+			System.out.print(arr[i] + ", ");
 		}
-		System.out.println("]");	
 	}
 	
-	public void oneToN(int n) {
+	
+	public void create0To100() {
 		
-		int[] nums = new int[n];
+		int[] nums = new int[100];
 		
-		for (int i = 0; i <nums.length; i++) {
-			
+		for (int i = 0; i < nums.length; i++) {
 			nums[i] = i;
 		}
-		printArray(nums);
 		
+		printArray(nums);
 	}
+	
+	public void numPositives(int[] arr) {
+		
+		int count = 0;
+		
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] > 0) {
+				count++;
+			}
+		}
+		System.out.println(count);
+	}
+	
 	
 	
 	public static void main(String[] args) {
 		ArrayExamples tester = new ArrayExamples();
-		
-//		tester.countPositives(new int[] {3, -5, 7});
-		tester.oneToN(100);
+		tester.numPositives(new int[]{4, -1, 7, -4, -3});
 		
 		
 		

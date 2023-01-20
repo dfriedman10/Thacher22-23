@@ -1,4 +1,4 @@
-package compression;
+package maps;
 import java.io.BufferedReader;
 import java.util.HashMap;
 

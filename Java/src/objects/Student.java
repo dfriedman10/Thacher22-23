@@ -14,6 +14,12 @@ public class Student {
 		grade = g;
 	}
 	
+	public String toString() {
+		
+		return "Name: " + name + ", age: " + age + ", from: " + 
+				from + ", grade: " + grade;
+	}
+	
 	
 	public void sayHi() {
 		System.out.println("Hi my name is " + 
@@ -25,17 +31,24 @@ public class Student {
 		grade ++;
 	}
 	
+	public void inSameGrade(Student other) {
+		
+		if (grade == other.grade) {
+			System.out.println("same grade!");
+		}
+		else {
+			System.out.println("nope");
+		}
+	}
+	
 	
 	public static void main(String[] args) {
 		
 		Student jared = new Student("Jared", 17, "SF", 11);
+		Student sera = new Student("Sera", 16, "LA" ,11);
 		
-		jared.sayHi();
-		
-		Student sera = new Student("Sera", 16, "LA", 11);
-		
-		sera.getOlder();
-		sera.sayHi();
+		jared.getOlder();
+		jared.inSameGrade(sera);
 		
 		
 		

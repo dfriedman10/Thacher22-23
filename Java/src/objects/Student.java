@@ -1,58 +1,41 @@
 package objects;
 
 public class Student {
-	
+
+	int grade;
 	String name;
 	int age;
 	String from;
-	int grade;
 	
-	public Student(String n, int a, String f, int g) {
-		name = n;
-		age = a;
-		from = f;
+	public Student(String n, int g, int a, String f) {
+		name = n; 
 		grade = g;
-	}
-	
-	public String toString() {
-		
-		return "Name: " + name + ", age: " + age + ", from: " + 
-				from + ", grade: " + grade;
-	}
-	
-	
-	public void sayHi() {
-		System.out.println("Hi my name is " + 
-	name + ", I'm from " + from);
+		age = a; 
+		from = f;
 	}
 	
 	public void getOlder() {
 		age ++;
-		grade ++;
+		grade ++; 
 	}
 	
-	public void inSameGrade(Student other) {
-		
-		if (grade == other.grade) {
-			System.out.println("same grade!");
-		}
-		else {
-			System.out.println("nope");
-		}
+	public void move(String newPlace) {
+		from = newPlace;
 	}
 	
+	public void sayHi() {
+		System.out.println("Hi, my name is " + 
+				name + ", I'm from " + from) ;
+	}
 	
 	public static void main(String[] args) {
 		
-		Student jared = new Student("Jared", 17, "SF", 11);
-		Student sera = new Student("Sera", 16, "LA" ,11);
+		Student george = new Student("George", 15, 10, "New York");
 		
-		jared.getOlder();
-		jared.inSameGrade(sera);
+		Student lucien = new Student("Lucien", 18, 12, "Seattle");
 		
+		george.move("SF");
 		
-		
-		
+		george.sayHi();
 	}
-
 }

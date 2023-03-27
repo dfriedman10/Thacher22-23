@@ -39,7 +39,13 @@ public class Shoe {
 		
 		Shoe sneaker = new Shoe(12, "Red");
 		
-		System.out.println(  sneaker.getSize() + jordans.getSize()  );
+		jordans.size = 20;
+		
+		
+		System.out.println(sneaker.size);
+		
+		
+		
 	}
 
 }

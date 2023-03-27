@@ -14,6 +14,13 @@ public class Student {
 		from = f;
 	}
 	
+	public Student(String n, int a, String f) {
+		name = n; 
+		grade = 9;
+		age = a; 
+		from = f;
+	}
+	
 	public String toString() {
 		
 		return "Name: " + name + ", age: " + age + ", grade: " + 
@@ -44,18 +51,19 @@ public class Student {
 		}
 	}
 	
+	public int IQ() {
+		return age * grade;
+		
+	}
+	
 	public static void main(String[] args) {
 		
-		Student george = new Student("George", 15, 10, "New York");
+		Student shiraz = new Student("shiraz", 16, 10, "Arizona");
+		Student julian = new Student("julian", 18, "MA");
 		
-		Student lucien = new Student("Lucien", 18, 12, "Seattle");
+		int iq = julian.IQ();
 		
-		george.getOlder();
-		george.getOlder();
-		
-		
-		george.inSameGrade(lucien);
-		
+		System.out.println(julian.IQ());
 		
 	}
 }

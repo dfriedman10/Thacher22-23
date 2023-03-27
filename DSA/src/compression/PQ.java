@@ -21,6 +21,18 @@ public class PQ<T> {
 	
 	public void add(T data, int p) {
 		
+		Node n = new Node(data, p);
+		
+		for (int i = 0; i < queue.size(); i++) 
+			if (p < queue.get(i).priority) {
+				queue.add(i, n);
+				return;
+			}
+		queue.add(n);
+	}
+	
+	public int getPriority() {
+		return queue.get(queue.size()-1).priority;
 	}
 	
 	// takes the last item, assuming our pq 

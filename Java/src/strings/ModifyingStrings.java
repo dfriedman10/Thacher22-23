@@ -2,37 +2,36 @@ package strings;
 
 public class ModifyingStrings {
 	
-	public void replace(String original, 
-			String toReplace, String replacement) {
+	public void replace(String str, String toReplace, String replacement) {
 		
-		 
-		
-		for (int i = 0; i < original.length() - toReplace.length()+1; i++) {
+		for (int i = 0; i < str.length() - toReplace.length() + 1; i++) {
 			
-			if (original.substring(i, i + toReplace.length()).equals(toReplace)) {
+			if (str.substring(i, i + toReplace.length()).equals(toReplace)) {
 				
-				original = original.substring(0, i) + 
-						replacement + original.substring(i+toReplace.length());
-				
+				str = str.substring( 0, i ) + replacement + 
+						str.substring(i+toReplace.length());       
 			}
 		}
-		System.out.println(original);
 		
+		System.out.println(str);
+	}
+	
+	
+	public void changePrefix(String word) {
+		
+		if (word.substring(0, 3).equals("pre")) {
+			word = "un" + word.substring(3);
+		}
+		
+		System.out.println(word);
 	}
 	
 	
 
 	public static void main(String[] args) {
-		
 		ModifyingStrings tester = new ModifyingStrings();
 		
-		tester.replace("hello mateo bye mateo", "mateo", "Shiraz");
-		
-		
-		
-		
-		
-		
+		tester.replace("Harry Potter You're a wizard Harry Potter", "Harry", "Julia");
 	}
 	
 	

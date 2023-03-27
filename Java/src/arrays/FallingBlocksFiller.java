@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 
 public class FallingBlocksFiller extends JPanel {
 	
-	private int WIDTH = 800, HEIGHT = 600, NUMBLOCKS = 10;
+	private int WIDTH = 800, HEIGHT = 600, NUMBLOCKS = 50;
 
 	// instance variables (what kind of data structure should we use?)
 	

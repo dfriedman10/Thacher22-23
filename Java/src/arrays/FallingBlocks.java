@@ -10,6 +10,8 @@ public class FallingBlocks extends JPanel {
 
 	// instance variables (what kind of data structure should we use?)
 	int[] x = new int[NUMBLOCKS],y = new int[NUMBLOCKS];
+	
+	
 	int[] speeds = new int[NUMBLOCKS];
 	Color[] colors = new Color[NUMBLOCKS];
 	

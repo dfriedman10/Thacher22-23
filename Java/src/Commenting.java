@@ -17,7 +17,7 @@ public class Commenting {
 	}
 	
 	// bad commenting
-	public void badStringtoASCII(String str) {
+	public void badStringToASCII(String str) {
 		
 		// for loop
 		for (int i = 0; i < str.length(); i++) {
@@ -26,13 +26,18 @@ public class Commenting {
 			char letter = str.charAt(i);
 			
 			// prints the answer
-			System.out.println(letter + ": " + (int)letter);
+			System.out.print((int)letter+",");
 		}
+		System.out.println();
 	}
 
 	
 	public static void main(String[] args) {
 		Commenting tester = new Commenting();
-		tester.goodStringToASCII("hello");
+		tester.badStringToASCII("Hav"); 
+		tester.badStringToASCII("e a goo");
+		tester.badStringToASCII("d sp");
+		tester.badStringToASCII("ring ");
+		tester.badStringToASCII("break!");
 	}
 }

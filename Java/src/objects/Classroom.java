@@ -6,27 +6,24 @@ public class Classroom {
 	String teacher;
 	String subject;
 	
-	public Classroom(int numberStudents, String t, String sub) {
-		
-		students = new Student[numberStudents];
-		teacher = t; 
-		subject = sub; 
+	public Classroom(int n, String t, String s) {
+		students = new Student[n];
+		teacher = t;
+		subject = s;
 	}
-	
-	public void addStudent(String name, int age, int grade, String from, int i) {
+
+	public void addStudent(int i, String name, 
+			int age, int grade, String from) {
 		
 		if (students[i] == null) {
-			
 			students[i] = new Student(name, age, grade, from);
-			
 		}
 		else {
-			System.out.println("Spot already taken. Try again");
+			System.out.println("Seat taken. Choose a new spot");
 		}
 	}
 	
-	public void introduceEveryone() {
-		
+	public void allSayHi() {
 		for (int i = 0; i < students.length; i++) {
 			
 			if (students[i] != null) {
@@ -37,38 +34,28 @@ public class Classroom {
 	
 	public double averageAge() {
 		
-		double count = 0;
-		int numFilled = 0;
+		double sum = 0;
+		int seatsFilled = 0;
 		
 		for (int i = 0; i < students.length; i++) {
 			
 			if (students[i] != null) {
-				count += students[i].age;
-				numFilled++;
+				sum += students[i].age;
+				seatsFilled ++;
 			}
 		}
-		
-		return count / numFilled;
+		return sum / seatsFilled;
 	}
 	
-	
-	
-	
-	
-
 	public static void main(String[] args) {
+		
+		Classroom cs = new Classroom(5, "Mr. Friedman", "CS");
+		cs.addStudent(0, "George", 15, 10, "NYC");
 
-		Classroom compsciC = new Classroom(7, "Mr. Friedman", "CS");
+		cs.addStudent(1, "Jayden", 16, 10, "Seoul");
 		
-		compsciC.addStudent("Evie", 17, 11, "Ojai", 1);
-		compsciC.addStudent("Graham", 12, 11, "SB", 2);
-		compsciC.addStudent("Julia", 20, 11, "Orlando", 3);
-		
-		System.out.println(compsciC.averageAge());
-
-		
-		
-		
-	}
-
+		cs.addStudent(2, "Petra", 17, 12, "LA");
+			
+		System.out.println( cs.averageAge()  );
+}	
 }

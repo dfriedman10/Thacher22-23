@@ -1,5 +1,6 @@
 package graphs;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -63,5 +64,54 @@ public class UnlabeledGraph<E> {
 			vertices.remove(info);
 		}
 	}
+	
+	public ArrayList<E> BFS(E start, E end) {
+		
+		HashMap<Vertex, Vertex> ledTo = new HashMap<Vertex, Vertex>();
+		ArrayList<Vertex> toVisit = new ArrayList<Vertex>();
+		
+		toVisit.add(vertices.get(start));
+		ledTo.put(vertices.get(start), null);
+		
+		while (toVisit.size() != 0) {
+			
+			Vertex current = toVisit.remove(0);
+			
+			for (Vertex neighbor : current.neighbors) {
+				
+				if (neighbor.info.equals(end)) {
+					ledTo.put(neighbor, current);
+					return backtrace(end, ledTo);
+				}
+				
+				else if (!ledTo.containsKey(neighbor)) {
+					
+					toVisit.add(neighbor);
+					ledTo.put(neighbor, current);
+				}
+			}
+		}
+		return null;
+	}
+	
+	
+	public ArrayList<E> backtrace(E end, HashMap<Vertex, Vertex> ledTo) {
+		
+		Vertex current = vertices.get(end);
+		ArrayList<E> path = new ArrayList<E>();
+		
+		while (current!= null) {
+			
+			path.add(0, current.info);
+			current = ledTo.get(current);
+		}
+		
+		return path;
+	}
+	
+	
+	
+	
+	
 	
 }

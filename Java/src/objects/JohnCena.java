@@ -9,13 +9,8 @@ public class JohnCena extends Wrestler{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void fight(Wrestler opp) {
-		
-		if (opp.getWeight() < this.getWeight()*2) {
-			
-			opp.color = "blue";
-			
-		}
+	public void fight() {
+		System.out.println("john cena fights");
 		
 	}
 

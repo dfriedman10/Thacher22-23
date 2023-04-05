@@ -12,35 +12,35 @@ public class Wrestler {
 		this.color = color;
 	}
 
-	public void tagTeam(Wrestler[] allies, 
-			Wrestler[]  opps) {
+	public void tagTeam(Wrestler[] allies, Wrestler[] opps) {
 		
-		double allyWeight = this.weight, 
-				oppWeight = 0;
+		double allyWeight = this.weight, oppWeight = 0;
 		
-		for (int i = 0; i< allies.length; i++) {
+		for (int i = 0; i < allies.length; i++) {
 			allies[i].color = this.color;
 			allyWeight += allies[i].weight;
 		}
 		
-		for (int i = 0; i< opps.length; i++) {
+		for (int i = 0; i < opps.length; i++) {
 			opps[i].color = opps[0].color;
 			oppWeight += opps[i].weight;
 		}
 		
 		if (allyWeight >= oppWeight) {
-			System.out.println("My team wins!");
-			this.wins ++;
-			for (int i = 0; i< allies.length; i++) {
+			
+			System.out.println("Allied team wins!");
+			for (int i = 0; i < allies.length; i++) {
 				allies[i].wins ++;
 			}
+			this.wins++;
 		}
 		else {
-			System.out.println("Opponents win :(");
-			for (int i = 0; i< opps.length; i++) {
+			System.out.println("Opponent team wins!");
+			for (int i = 0; i < opps.length; i++) {
 				opps[i].wins ++;
 			}
 		}
+
 	}
 	
 	public double getWeight() {
@@ -48,20 +48,36 @@ public class Wrestler {
 	}
 	
 	
+	public void fight() {
+		System.out.println("fight");
+	}
+	
+	
 	public static void main(String[] args) {
 		
-		Wrestler me = new Wrestler("blue", 100, 0);
-
-		Wrestler george = new Wrestler("red", 50, 2);
-		Wrestler lucien = new Wrestler("green", 200, 1);
-		Wrestler paige = new Wrestler("purple", 150, 0);
-		Wrestler kaili = new Wrestler("white", 120, 3);
+//		Wrestler me = new Wrestler("blue", 100, 0);
+//		
+//		Wrestler graham = new Wrestler("green", 80, 5);
+//		Wrestler evie = new Wrestler("blue", 150, 2);
+//		
+//		Wrestler[] allies = { graham,  evie };
+//		Wrestler[] opps = { new Wrestler("red", 70, 5), new Wrestler("black", 200, 2), new Wrestler("white", 120, 2)  };
+//
+//		
+//		me.tagTeam(allies, opps);
+//		
+//		System.out.println(opps[0].wins);
 		
-		Wrestler[] allies = {george};
 		
-		me.tagTeam(allies, new Wrestler[] {lucien, paige, kaili});
+		
+		Wrestler jc = new JohnCena("blue", 100, 20);
+		
+		jc.fight();
+		
+		
+		
 
-		System.out.println(george.color);
+		
 		
 		
 		

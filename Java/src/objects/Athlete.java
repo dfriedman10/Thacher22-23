@@ -3,34 +3,44 @@ package objects;
 public class Athlete {
 	
 	String sport;
-	int timePracticed;
 	String name;
 	boolean pro;
+	private int vert;
+	int numSponsors;
 	
-	public Athlete(String sport, 
-			String name, boolean pro) {
+	public Athlete(String sport, String name, 
+			boolean pro, int vert, int numSponsors) {
 		
 		this.sport = sport;
-		this.timePracticed= 0;	// in hours
 		this.name = name;
-		this.pro = pro;
+		
+		this.numSponsors = numSponsors;
 	}
 	
 	public String toString() {
-		return "My name is " + name +", I play " 
-				+ sport + ". Professional status: " + pro;
+		return "name: " + name + ", sport: " + sport 
+				+ (pro ? " is pro" : "isn't pro");
 	}
 	
-	public void play(int time) {
-		timePracticed += time;
-	}
-
 	public void goPro() {
-		if (timePracticed > 10000) {
+		
+		if (vert > 30) {
 			pro = true;
 		}
 		else {
-			System.out.println("Not enough practice time");
+			System.out.println("no springs");
 		}
+		
 	}
+		
+	public void train() {
+		System.out.println("Lift lift lift");
+	}
+	
+	public int getVert() {
+		return vert;
+	}
+	
+	
+	
 }

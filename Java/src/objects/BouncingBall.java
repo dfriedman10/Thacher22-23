@@ -14,10 +14,10 @@ public class BouncingBall extends Ball {
 		
 		super.move();
 		
-		if (getX() < 0 || getX() > WIDTH) {
+		if (getX() < 0 || getX() > WIDTH-getRad()) {
 			setXSpeed(-getXSpeed());
 		}
-		if (getY() < 0 || getY() > HEIGHT) {
+		if (getY() < 0 || getY() > HEIGHT-getRad()) {
 			setYSpeed(-getYSpeed());
 		}
 		

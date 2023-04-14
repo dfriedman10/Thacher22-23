@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
+import graphs.LabeledGraph.Edge;
+import graphs.LabeledGraph.Vertex;
+
 public class UnlabeledGraph<E> {
 	
 	public class Vertex {
@@ -110,6 +113,57 @@ public class UnlabeledGraph<E> {
 	}
 	
 	
+	public ArrayList<E> DFS(Vertex curr, HashSet<Vertex> visited, ArrayList<E> path, E target) {
+		
+		for (Vertex neighbor : curr.neighbors) {
+			
+			if (neighbor.info.equals(target)) {
+				path.add(neighbor.info);
+				return path;
+			}
+			
+			if (!visited.contains(neighbor)) {
+				
+				visited.add(neighbor);
+				
+				ArrayList<E> newPath = new ArrayList<E>();
+				for (E v : path) newPath.add(v);
+				newPath.add(neighbor.info);
+				
+				ArrayList<E> soln = DFS(neighbor, visited, newPath, target);
+				if (soln != null) {
+					return soln;
+				}
+			}
+		}
+		return null;	
+	}
+	
+	public ArrayList<E> startDFS(E start, E target) {
+		HashSet<Vertex> visited = new HashSet<Vertex>();
+		visited.add(vertices.get(start));
+		ArrayList<E> path = new ArrayList<E>();
+		path.add(start);
+		return DFS(vertices.get(start), visited, path, target);
+	}
+	
+	
+	public static void main(String[] args) {
+		UnlabeledGraph<String> graph = new UnlabeledGraph<String> ();
+		
+		graph.add("A");graph.add("B");graph.add("C");graph.add("D");graph.add("E");
+		
+		graph.connect("A", "B");
+		graph.connect("B", "C");
+		graph.connect("C", "D");
+		graph.connect("D", "E");
+		graph.connect("A", "E");
+		
+		System.out.println(graph.startDFS("A","E"));
+		
+		
+		
+	}
 	
 	
 	

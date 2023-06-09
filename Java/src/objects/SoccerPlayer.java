@@ -26,7 +26,7 @@ public class SoccerPlayer extends Athlete {
 		
 		super.train();
 		
-		kickStrength ++;
+		System.out.println("run run run");
 
 	}
 	
@@ -39,11 +39,20 @@ public class SoccerPlayer extends Athlete {
 		
 		
 		
-		SoccerPlayer messi = new SoccerPlayer("Messi", true, 35, 100, 5);
+		Athlete messi = new SoccerPlayer("Messi", true, 35, 100, 5);
+		Athlete lucien = new Athlete("track", "lucien", true, 35, 100);
+		Athlete ronaldo = new SoccerPlayer("Messi", true, 35, 100, 5);
 		
-		messi.shoot();
-		messi.train();
-		System.out.println(messi);
+
+		
+		Athlete[] athletes = { messi, lucien, ronaldo  };
+		
+		for (int i = 0; i < athletes.length; i++) {
+			athletes[i].train();
+		}
+		
+		
+		
 	}
 	
 	

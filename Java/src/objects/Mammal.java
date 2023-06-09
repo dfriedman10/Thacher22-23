@@ -17,9 +17,7 @@ public abstract class Mammal {
 	public static void main(String[] args) {
 		
 
-		Mammal[] eric = new Mammal[8];
-		
-		eric[0] = new Dog();
+		Mammal pet = new Mammal();
 		
 	}
 }
